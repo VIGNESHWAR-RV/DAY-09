@@ -1,0 +1,88 @@
+
+      "PRINTING THE COUNTRY'S NAME THAT USE (U.S DOLLAR) AS CURRENCY IN REST-COUNTRIES USING FILTER AND MAP FUNCTION"
+	  
+let restcountries = new XMLHttpRequest();
+restcountries.open("GET", "https://restcountries.com/v2/all");
+restcountries.onload = function () {
+    if (restcountries.status >= 200 && restcountries.status < 300) {
+    let t = JSON.parse(this.response);
+    let countries = t.filter((country)=>country.currencies && country['currencies'][0]['symbol']==="$").map((country)=>country.name);
+    console.log(countries);
+  } else {
+    console.log("Data is not available");
+  }
+};
+
+restcountries.send();
+
+
+X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X
+
+      //EXECUTED IN MICROSOFT EDGE
+	  
+OUTPUT :
+
+Array(61)
+0: "American Samoa"
+1: "Anguilla"
+2: "Antigua and Barbuda"
+3: "Argentina"
+4: "Australia"
+5: "Bahamas"
+6: "Barbados"
+7: "Belize"
+8: "Bermuda"
+9: "Bonaire, Sint Eustatius and Saba"
+10: "British Indian Ocean Territory"
+11: "Virgin Islands (British)"
+12: "Virgin Islands (U.S.)"
+13: "Brunei Darussalam"
+14: "Canada"
+15: "Cayman Islands"
+16: "Chile"
+17: "Christmas Island"
+18: "Cocos (Keeling) Islands"
+19: "Colombia"
+20: "Cook Islands"
+21: "Cuba"
+22: "Dominica"
+23: "Dominican Republic"
+24: "Ecuador"
+25: "El Salvador"
+26: "Fiji"
+27: "Grenada"
+28: "Guam"
+29: "Guyana"
+30: "Heard Island and McDonald Islands"
+31: "Hong Kong"
+32: "Jamaica"
+33: "Kiribati"
+34: "Liberia"
+35: "Marshall Islands"
+36: "Mexico"
+37: "Micronesia (Federated States of)"
+38: "Montserrat"
+39: "Namibia"
+40: "Nauru"
+41: "New Zealand"
+42: "Niue"
+43: "Norfolk Island"
+44: "Northern Mariana Islands"
+45: "Palau"
+46: "Pitcairn"
+47: "Puerto Rico"
+48: "Saint Kitts and Nevis"
+49: "Saint Lucia"
+50: "Saint Vincent and the Grenadines"
+51: "Singapore"
+52: "Solomon Islands"
+53: "Suriname"
+54: "Taiwan"
+55: "Tokelau"
+56: "Trinidad and Tobago"
+57: "Turks and Caicos Islands"
+58: "Tuvalu"
+59: "United States of America"
+60: "Uruguay"
+length: 61
+[[Prototype]]: Array(0)
